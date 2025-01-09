@@ -24,7 +24,7 @@ beforeEach(function() {
   largeTree = new BinaryTree(root);
 });
 
-/*describe("minDepth", function() {
+describe("minDepth", function() {
   it("handles simple trees", function() {
     expect(smallTree.minDepth()).toBe(2);
   });
@@ -38,7 +38,7 @@ beforeEach(function() {
   });
 });
 
-describe("maxDepth", function() {
+/*describe("maxDepth", function() {
   it("handles simple trees", function() {
     expect(smallTree.maxDepth()).toBe(2);
   });
