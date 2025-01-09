@@ -17,28 +17,32 @@ class BinaryTree {
    * the length of the shortest path from the root to a leaf. */
 
   minDepth() {
-    if (!this.root) {
-      return 0;
-    } 
-    
-    let leftTree = new BinaryTree(this.root.left);
-    let rightTree = new BinaryTree(this.root.right);
-    if (!this.root.left && !this.root.right) {
-      return 1;
-    } else if (this.root.left && !this.root.right) {
-      return 1 + leftTree.minDepth();
-    } else if (this.root.right && !this.root.left) {
-      return 1 + rightTree.minDepth();
-    } else {
-      return 1 + Math.min(leftTree.minDepth(), rightTree.minDepth());
+    if (!this.root) return 0;
+
+    function minDepthHelper(rootNode) {
+      if (!rootNode.left && !rootNode.right) return 1;
+      else if (rootNode.left && !rootNode.right) return 1 + minDepthHelper(rootNode.left);
+      else if (!rootNode.left && rootNode.right) return 1 + minDepthHelper(rootNode.right);
+      else return 1 + Math.min(minDepthHelper(rootNode.left), minDepthHelper(rootNode.right));
     }
+
+    return minDepthHelper(this.root);
   }
 
   /** maxDepth(): return the maximum depth of the tree -- that is,
    * the length of the longest path from the root to a leaf. */
 
   maxDepth() {
+    if (!this.root) return 0;
 
+    function maxDepthHelper(rootNode) {
+      if (!rootNode.left && !rootNode.right) return 1;
+      else if (rootNode.left && !rootNode.right) return 1 + maxDepthHelper(rootNode.left);
+      else if (!rootNode.left && rootNode.right) return 1 + maxDepthHelper(rootNode.right);
+      else return 1 + Math.max(maxDepthHelper(rootNode.left), maxDepthHelper(rootNode.right));
+    }
+
+    return maxDepthHelper(this.root);
   }
 
   /** maxSum(): return the maximum sum you can obtain by traveling along a path in the tree.
