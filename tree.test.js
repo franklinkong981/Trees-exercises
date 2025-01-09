@@ -32,7 +32,7 @@ beforeEach(function() {
   largeTree = new Tree(n);
 });
 
-/*describe("sumValues", function() {
+describe("sumValues", function() {
   it("sums simple trees", function() {
     expect(smallTree.sumValues()).toEqual(3);
   });
@@ -46,7 +46,7 @@ beforeEach(function() {
   });
 });
 
-describe("countEvens", function() {
+/*describe("countEvens", function() {
   it("counts nodes in simple trees", function() {
     expect(smallTree.countEvens()).toEqual(1);
   });
