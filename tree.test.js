@@ -60,7 +60,7 @@ describe("countEvens", function() {
   });
 });
 
-/*describe("numGreater", function() {
+describe("numGreater", function() {
   it("counts nodes in small trees", function() {
     expect(smallTree.numGreater(0)).toEqual(2);
     expect(smallTree.numGreater(1)).toEqual(1);
@@ -77,4 +77,4 @@ describe("countEvens", function() {
   it("counts nodes in an empty  tree", function() {
     expect(emptyTree.numGreater(0)).toEqual(0);
   });
-});*/
+});
