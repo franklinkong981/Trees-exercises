@@ -46,7 +46,7 @@ describe("sumValues", function() {
   });
 });
 
-/*describe("countEvens", function() {
+describe("countEvens", function() {
   it("counts nodes in simple trees", function() {
     expect(smallTree.countEvens()).toEqual(1);
   });
@@ -60,7 +60,7 @@ describe("sumValues", function() {
   });
 });
 
-describe("numGreater", function() {
+/*describe("numGreater", function() {
   it("counts nodes in small trees", function() {
     expect(smallTree.numGreater(0)).toEqual(2);
     expect(smallTree.numGreater(1)).toEqual(1);
