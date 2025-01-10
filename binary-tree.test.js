@@ -78,7 +78,7 @@ describe("maxSum", function() {
   });
 });
 
-/*describe("nextLarger", function() {
+describe("nextLarger", function() {
   it("handles simple trees", function() {
     expect(smallTree.nextLarger(4)).toBe(5);
     expect(smallTree.nextLarger(5)).toBe(6);
@@ -99,7 +99,7 @@ describe("maxSum", function() {
   });
 });
 
-describe("areCousins", function() {
+/*describe("areCousins", function() {
   it("returns true if they are cousins, false if not", function() {
     let n7 = new BinaryTreeNode(7);
     let n6 = new BinaryTreeNode(6);

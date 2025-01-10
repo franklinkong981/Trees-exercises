@@ -77,7 +77,7 @@ class BinaryTree {
       if (rootNode.right) nextLargestHelper(rootNode.right);
     }
 
-    nextLargerHelper(this.root);
+    nextLargestHelper(this.root);
     return nextLargestValue;
   }
 
