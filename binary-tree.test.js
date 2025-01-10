@@ -99,7 +99,7 @@ describe("nextLarger", function() {
   });
 });
 
-/*describe("areCousins", function() {
+describe("areCousins", function() {
   it("returns true if they are cousins, false if not", function() {
     let n7 = new BinaryTreeNode(7);
     let n6 = new BinaryTreeNode(6);
@@ -122,7 +122,7 @@ describe("nextLarger", function() {
   });
 });
 
-describe("serialize and deserialize", function() {
+/*describe("serialize and deserialize", function() {
   let myTree;
 
   beforeEach(function() {

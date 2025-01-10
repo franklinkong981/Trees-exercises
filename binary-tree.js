@@ -86,7 +86,25 @@ class BinaryTree {
    * (i.e. are at the same level but have different parents. ) */
 
   areCousins(node1, node2) {
+    if (this.root == node1 || this.root == node2) return false;
 
+    //Assume that node1 and node2 are guaranteed to be in the tree, which means if we reach this point, the root node must have 2 children.
+    let nodesAtCurrentLevel = [this.root];
+    let nodesAtNextLevel = [];
+    while (nodesAtCurrentLevel.length) {
+      for (let node of nodesAtCurrentLevel) {
+        if ((node.left == node1 && node.right == node2) || (node.right == node2 && node.left == node1)) return false;
+        if (node.left) nodesAtNextLevel.push(node.left);
+        if (node.right) nodesAtNextLevel.push(node.right);
+      }
+
+      if (nodesAtNextLevel.includes(node1) && nodesAtNextLevel.includes(node2)) return true;
+      else if (nodesAtNextLevel.includes(node1) || nodesAtNextLevel.includes(node2)) return false;
+
+      nodesAtCurrentLevel = nodesAtNextLevel;
+      nodesAtNextLevel = [];
+    }
+    return false;
   }
 
   /** Further study!
