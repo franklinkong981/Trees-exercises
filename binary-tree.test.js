@@ -122,7 +122,7 @@ describe("areCousins", function() {
   });
 });
 
-/*describe("serialize and deserialize", function() {
+describe("serialize and deserialize", function() {
   let myTree;
 
   beforeEach(function() {
@@ -219,4 +219,4 @@ describe("lowestCommonAncestor", function() {
     expect(tree.lowestCommonAncestor(leftRightLeft, leftLeft)).toBe(left);
     expect(tree.lowestCommonAncestor(right_left, right_right)).toBe(right);
   });
-});*/
+});
