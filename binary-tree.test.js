@@ -52,7 +52,7 @@ describe("maxDepth", function() {
   });
 });
 
-/*describe("maxSum", function() {
+describe("maxSum", function() {
   it("handles simple trees", function() {
     expect(smallTree.maxSum()).toBe(16);
   });
@@ -78,7 +78,7 @@ describe("maxDepth", function() {
   });
 });
 
-describe("nextLarger", function() {
+/*describe("nextLarger", function() {
   it("handles simple trees", function() {
     expect(smallTree.nextLarger(4)).toBe(5);
     expect(smallTree.nextLarger(5)).toBe(6);

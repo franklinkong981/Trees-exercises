@@ -49,23 +49,36 @@ class BinaryTree {
    * The path doesn't need to start at the root, but you can't visit a node more than once. */
 
   maxSum() {
-    if (!this.root) return 0;
+    let result = 0;
 
-    function maxSumHelper(rootNode) {
-      if (!rootNode.left && !rootNode.right) return rootNode.val;
-      else if (rootNode.left && !rootNode.right) return rootNode.val + maxSumHelper(rootNode.left);
-      else if (!rootNode.left && rootNode.right) return rootNode.val + maxSumHelper(rootNode.right);
-      else return 1 + Math.max(maxSumHelper(rootNode.left), maxSumHelper(rootNode.right));
+    function maxSumHelper(node) {
+      if (node === null) return 0;
+      const leftSum = maxSumHelper(node.left);
+      const rightSum = maxSumHelper(node.right);
+      result = Math.max(result, node.val + leftSum + rightSum);
+      return Math.max(0, leftSum + node.val, rightSum + node.val);
     }
-    
-    return maxSumHelper(this.root);
+
+    maxSumHelper(this.root);
+    return result;
   }
 
   /** nextLarger(lowerBound): return the smallest value in the tree
    * which is larger than lowerBound. Return null if no such value exists. */
 
   nextLarger(lowerBound) {
+    if (!this.root) return null;
+    let nextLargestValue = null;
 
+    function nextLargestHelper(rootNode) {
+      if (rootNode.val > lowerBound && (rootNode.val < nextLargestValue || (!nextLargestValue))) nextLargestValue = rootNode.val;
+
+      if (rootNode.left) nextLargestHelper(rootNode.left);
+      if (rootNode.right) nextLargestHelper(rootNode.right);
+    }
+
+    nextLargerHelper(this.root);
+    return nextLargestValue;
   }
 
   /** Further study!
